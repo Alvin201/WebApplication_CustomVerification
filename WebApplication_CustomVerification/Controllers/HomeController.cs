@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebApplication_CustomVerification.Verification;
 
 namespace WebApplication_CustomVerification.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -23,6 +21,27 @@ namespace WebApplication_CustomVerification.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        [CustomAuthorize(ListId = 1111)]
+        public ActionResult List_01()
+        {
+
+            return View();
+        }
+
+        [CustomAuthorize(ListId = 1112)]
+        public ActionResult List_02()
+        {
+
+            return View();
+        }
+
+        [CustomAuthorize(ListId = 1113)]
+        public ActionResult List_03()
+        {
 
             return View();
         }
